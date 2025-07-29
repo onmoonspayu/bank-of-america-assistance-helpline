@@ -20,31 +20,36 @@
       line-height: 1.6;
     }
 
-    .logo {
-      position: fixed;
-      top: 0.3rem;
-      left: 0.5rem; /* Moved to top-left */
-      width: 240px;
-      height: auto;
-      z-index: 9999;
-    }
-
     header {
       background: linear-gradient(120deg, #002c5f, #0052a0);
       color: #fff;
-      padding: 2rem 1rem 3rem;
+      padding: 2rem 1rem;
+    }
+
+    .header-inner {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      max-height: 60px;
+    }
+
+    .header-text {
+      flex: 1;
       text-align: center;
     }
 
-    header h1 {
+    .header-text h1 {
       font-size: 2.3rem;
       margin-bottom: 0.5rem;
     }
 
-    header p {
+    .header-text p {
       font-size: 1rem;
       opacity: 0.9;
     }
@@ -137,19 +142,26 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
+      .header-inner {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+      }
+
+      .header-text h1 {
         font-size: 1.8rem;
       }
 
       .call-button {
         font-size: 1rem;
         padding: 0.8rem 1.8rem;
-      }
-
-      .logo {
-        width: 180px;
-        top: 0.3rem;
-        left: 0.5rem; /* Also updated here */
       }
     }
   </style>
@@ -158,17 +170,17 @@
 <script defer data-domain="boa.ju" src="js/script.js"></script>
 
 <body>
-  <!-- Logo in top-left corner -->
-  
-
   <header>
-    <h1>Bank Of America Support Resources</h1>
-    <p>Find guidance for mobile banking, cards, and account access issues.</p>
-    <a class="call-button" href="tel:+18339219241" aria-label="Call support line">📞 Call Support</a>
+      <img src="logo1.png" alt="Logo" class="logo" />
+      <div class="header-text">
+        <h1>Bank Of America Support Resources</h1>
+        <p>Find guidance for mobile banking, cards, and account access issues.</p>
+        <a class="call-button" href="tel:+18339219241" aria-label="Call support line">📞 Call Support</a>
+      </div>
+    </div>
   </header>
 
   <div class="container">
-
     <div class="card">
       <h2>🔐 General Customer Help</h2>
       <p>We provide helpful guidance for customers seeking answers to common banking issues such as login problems, app errors, and card transactions.</p>
@@ -193,7 +205,6 @@
       <p>Need help now? Click below or dial <a class="tel-link" href="tel:+18339219241">1-833-921-9241</a> directly.</p>
       <a class="call-button" href="tel:+18339219241" aria-label="Call support line">📞 Call Support</a>
     </div>
-
   </div>
 
   <footer>
@@ -215,6 +226,5 @@
   </script>
   <noscript><img src="https://app.ardalio.com/7/2/2200954.png" /></noscript>
   <!-- end code v 7.0 -->
-
 </body>
 </html>
